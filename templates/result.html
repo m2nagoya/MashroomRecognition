@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style type="text/css">
+  /* Mobile M */
+  @media screen and (min-width: 375px){
+    p {
+      background-color: #ffa500;
+      color: #ffffff;
+      font-size: 4vw;
+      margin-top: 0px;
+      padding: 3vw;
+    }
+    button {
+      padding: 0.2rem 1.0rem;
+      text-decoration: none;
+      background: #ffa500;/*ボタン色*/
+      color: #ffffff;
+      border-radius: 0.5rem;
+    }
+    form {
+      position: absolute;
+      top:  37.5%;
+      right: auto;
+      left: 7.5vw;
+    }
+    table {
+      position: absolute;
+      font-size: 0.75rem;
+      border-spacing: 1rem;
+      top: 9%;
+      left: 50vw;
+    }
+    img {
+      position: absolute;
+      top:  11%;
+      width:  40vw;
+      height: 40vw;
+      left:  7.5vw;
+    }
+  }
+  /* Mobile L */
+  @media screen and (min-width: 425px){
+    p {
+      background-color: #ffa500;
+      color: #ffffff;
+      font-size: 4vw;
+      margin-top: 0px;
+      padding: 4.5vw;
+    }
+    button {
+      padding: 0.2rem 1.2rem;
+      text-decoration: none;
+      background: #ffa500;/*ボタン色*/
+      color: #ffffff;
+      border-radius: 0.5rem;
+    }
+    form {
+      position: absolute;
+      top:  40%;
+      right: auto;
+      left: 12.5vw;
+    }
+    table {
+      position: absolute;
+      font-size: 1rem;
+      border-spacing: 1rem;
+      top: 10%;
+      left: 49vw;
+    }
+    img {
+      position: absolute;
+      top:  12%;
+      width:  40vw;
+      height: 40vw;
+      left:  6vw;
+    }
+  }
+  /* PC */
+  @media screen and (min-width: 768px){
+    p {
+      background-color: #ffa500;
+      color: #ffffff;
+      font-size: 28px;
+      margin-top: 0px;
+      padding: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      text-decoration: none;
+      background: #ffa500;/*ボタン色*/
+      color: #ffffff;
+      border-radius: 3px;
+    }
+    form {
+      position: absolute;
+      top: 510px ;
+      left: 280px;
+    }
+    table {
+      position: absolute;
+      font-size: 32px;
+      border-spacing: 24px;
+      top: 120px;
+      left: 470px;
+    }
+    img {
+      position: absolute;
+      width:  340px;
+      height: 340px;
+      top:  110px;
+      left: 90px;
+    }
+  }
+</style>
+
+<p>Mushroom Recognition (VGG16)</p>
+
+<form action="/result" method="post" enctype="multipart/form-data" class="result">
+  <input type="file" name="image" accept="image/png, image/jpeg, image/jpg">
+  <button type="submit">Upload</button>
+</form>
+
+<img src="{{ img_url }}">
+
+<table>
+  <tr style="border-style: none;">
+    <td> {{ rank1 }}  </td>
+    <td> {{ pred1 }}% </td>
+  </tr>
+  <tr style="border-style: none;">
+    <td> {{ rank2 }}  </td>
+    <td> {{ pred2 }}% </td>
+  </tr>
+  <tr style="border-style: none;">
+    <td> {{ rank3 }}  </td>
+    <td> {{ pred3 }}% </td>
+  </tr>
+  <tr style="border-style: none;">
+    <td> {{ rank4 }}  </td>
+    <td> {{ pred4 }}% </td>
+  </tr>
+  <tr style="border-style: none;">
+    <td> {{ rank5 }}  </td>
+    <td> {{ pred5 }}% </td>
+  </tr>
+</table>
+
+{% endblock %}

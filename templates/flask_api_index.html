@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<style type="text/css">
+  /* Mobile M */
+  @media screen and (min-width: 375px){
+    p {
+      background-color: #ffa500;
+      color: #ffffff;
+      font-size: 4vw;
+      margin-top: 0px;
+      padding: 3vw;
+    }
+    button {
+      padding: 0.2rem 1.0rem;
+      text-decoration: none;
+      background: #ffa500;/*ボタン色*/
+      color: #ffffff;
+      border-radius: 0.5em;
+    }
+    form {
+      position: absolute;
+      top:  37.5%;
+      right: auto;
+      left: 7.5vw;
+    }
+  }
+  /* Mobile L */
+  @media screen and (min-width: 425px){
+    p {
+      background-color: #ffa500;
+      color: #ffffff;
+      font-size: 4vw;
+      margin-top: 0px;
+      padding: 4.5vw;
+    }
+    button {
+      padding: 0.2rem 1.2rem;
+      text-decoration: none;
+      background: #ffa500;/*ボタン色*/
+      color: #ffffff;
+      border-radius: 0.5em;
+    }
+    form {
+      position: absolute;
+      top:  40%;
+      right: auto;
+      left: 12.5vw;
+    }
+  }
+  /* PC */
+  @media screen and (min-width: 768px){
+    p {
+      background-color: #ffa500;
+      color: #ffffff;
+      font-size: 28px;
+      margin-top: 0px;
+      padding: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      text-decoration: none;
+      background: #ffa500;/*ボタン色*/
+      color: #ffffff;
+      border-radius: 0.5em;
+    }
+    form {
+      position: absolute;
+      top: 510px ;
+      left: 320px;
+    }
+  }
+</style>
+
+<p>Mushroom Recognition (VGG16)</p>
+<form action="/result" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" accept="image/png, image/jpeg, image/jpg">
+  <button type="submit">Upload</button>
+</form>
+
+{% endblock %}
