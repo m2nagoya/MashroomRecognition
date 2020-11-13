@@ -2,5 +2,5 @@ Flask==1.1.1
 Keras==2.1.5
 numpy==1.16.5
 Pillow==7.0.0
-tensorflow==1.8.0 
+tensorflow==2.3.1 
 h5py==2.9.0
